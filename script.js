@@ -172,12 +172,21 @@ const categoryTabs = document.getElementById("categoryTabs");
 menu.forEach((section, index) => {
   const tab = document.createElement("button");
   tab.textContent = section.title;
-  if(index === 0) tab.classList.add("active");
+
+  if(index === 0){
+    tab.classList.add("active");
+  }
 
   tab.addEventListener("click", () => {
-    document.querySelectorAll(".category-tabs button").forEach(btn => btn.classList.remove("active"));
+    document
+      .querySelectorAll(".category-tabs button")
+      .forEach(btn => btn.classList.remove("active"));
+
     tab.classList.add("active");
-    document.getElementById(`section-${index}`).scrollIntoView({ behavior:"smooth", block:"start" });
+
+    document
+      .getElementById(`section-${index}`)
+      .scrollIntoView({ behavior:"smooth", block:"start" });
   });
 
   categoryTabs.appendChild(tab);
@@ -190,15 +199,19 @@ menu.forEach((section, index) => {
   category.innerHTML = `
     <div class="category-content">
       <h3>${section.title}</h3>
+
       <div class="items">
         ${section.items.map(item => `
           <div class="item">
-  <div>
-    <span class="item-name">${item[0]}</span>
-    ${item[2] ? `<div class="sub-item">${item[2]}</div>` : ""}
-  </div>
-  <span class="price">${item[1]}</span>
-</div>
+            <div class="item-info">
+              <span class="item-name">${item[0]}</span>
+              ${item[2] ? `<div class="sub-item">${item[2]}</div>` : ""}
+            </div>
+
+            <span class="price">${item[1]}</span>
+          </div>
+        `).join("")}
+      </div>
     </div>
   `;
 
