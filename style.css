@@ -1,0 +1,162 @@
+:root{
+--gold:#D4AF37;
+--black:#080808;
+--white:#ffffff;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Poppins,sans-serif;
+background:#080808;
+color:white;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo img{
+height:60px;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+.hero{
+height:100vh;
+background:url('../assets/hero.jpg');
+background-size:cover;
+background-position:center;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.65);
+}
+
+.hero-content{
+position:relative;
+text-align:center;
+}
+
+.hero-logo{
+width:250px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:4rem;
+color:var(--gold);
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:15px 35px;
+background:var(--gold);
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:30px;
+}
+
+#menu{
+padding:100px 8%;
+}
+
+#menu h2{
+text-align:center;
+font-size:3rem;
+color:var(--gold);
+margin-bottom:60px;
+}
+
+.menu-category{
+display:grid;
+grid-template-columns:1fr 1fr;
+margin-bottom:60px;
+background:#111;
+border-radius:20px;
+overflow:hidden;
+}
+
+.category-image{
+min-height:400px;
+background-size:cover;
+background-position:center;
+}
+
+.category-content{
+padding:40px;
+}
+
+.category-content h3{
+color:var(--gold);
+margin-bottom:20px;
+font-size:2rem;
+}
+
+.category-content li{
+padding:10px 0;
+border-bottom:1px solid #222;
+list-style:none;
+}
+
+#contact{
+padding:100px 8%;
+text-align:center;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+padding:15px 20px;
+color:white;
+text-decoration:none;
+border-radius:50px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2rem;
+}
+
+.menu-category{
+grid-template-columns:1fr;
+}
+
+nav{
+padding:20px;
+}
+
+}
