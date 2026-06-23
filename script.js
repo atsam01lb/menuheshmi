@@ -201,8 +201,8 @@ menu.forEach((section, index) => {
       <h3>${section.title}</h3>
 
       <div class="items">
-        ${section.items.map(item => `
-          <div class="item">
+        ${section.items.map((item, itemIndex) => `
+          <div class="item" style="animation-delay:${itemIndex * 0.06}s">
             <div class="item-info">
               <span class="item-name">${item[0]}</span>
               ${item[2] ? `<div class="sub-item">${item[2]}</div>` : ""}
@@ -233,9 +233,7 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 });
 
 window.addEventListener("scroll", () => {
-  topbar.style.background = window.scrollY > 60
-    ? "rgba(0,0,0,.95)"
-    : "rgba(0,0,0,.78)";
+  topbar.classList.toggle("scrolled", window.scrollY > 60);
 });
 
 const reveals = document.querySelectorAll(".reveal");
