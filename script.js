@@ -192,15 +192,13 @@ menu.forEach((section, index) => {
       <h3>${section.title}</h3>
       <div class="items">
         ${section.items.map(item => `
-          <div>
-            <div class="item">
-              <span class="item-name">${item[0]}</span>
-              <span class="price">${item[1]}</span>
-            </div>
-            ${item[2] ? `<div class="sub-item">${item[2]}</div>` : ""}
-          </div>
-        `).join("")}
-      </div>
+          <div class="item">
+  <div>
+    <span class="item-name">${item[0]}</span>
+    ${item[2] ? `<div class="sub-item">${item[2]}</div>` : ""}
+  </div>
+  <span class="price">${item[1]}</span>
+</div>
     </div>
   `;
 
